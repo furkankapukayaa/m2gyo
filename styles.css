@@ -1,24 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
 :root{
     /* Yeni Renk Paleti */
-    --bg: #0a192f; /* Koyu Lacivert */
-    --bg-soft: #172a45;
-    --card: #0e213e;
-    --text: #ccd6f6;
-    --muted: #8892b0;
-    --accent: #c0a062; /* Altın/Bronz */
-    --accent-2: #25507D; /* Kurumsal Mavi */
-    --ring: 0 0 0 3px rgba(37, 80, 125, .35);
-    --shadow: 0 10px 30px -15px rgba(0,0,0,.7);
+    --primary: #1C3D5A;
+    --primary-rgb: 28, 61, 90;
+    --accent: #F4A261;
+    --accent-rgb: 244, 162, 97;
+    --background: #F8F9FA;
+    --heading-color: #1C3D5A;
+    --body-color: #333333;
+    --body-color-rgb: 51, 51, 51;
+    --extra-accent: #2A9D8F;
+    --extra-accent-rgb: 42, 157, 143;
+
+    /* Mevcut değişkenleri yeni palete göre güncelle */
+    --bg: var(--background); /* Light mode default */
+    --bg-soft: #ffffff; /* Light mode soft background */
+    --card: #ffffff; /* Light mode card background */
+    --text: var(--body-color); /* Light mode body text */
+    --muted: #6c757d; /* Slightly darker muted for contrast */
+    --accent-2: var(--extra-accent); /* Ek vurgu */
+    --ring: 0 0 0 3px rgba(28, 61, 90, .35); /* Primary color based ring */
+    --shadow: 0 5px 15px -5px rgba(0,0,0,.1); /* Light mode shadow */
   }
   
+  /* Dark mode için renkleri ayarla */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; /* Koyu arka plan */
+      --bg-soft: #1e1e1e;
+      --card: #2c2c2c;
+      --text: #e0e0e0;
+      --muted: #b0b0b0;
+      --heading-color: #e0e0e0; /* Dark mode başlık rengi */
+      --shadow: 0 10px 30px -15px rgba(0,0,0,.7);
+    }
+  }
+
+  /* Light mode için renkleri ayarla (varsayılan olarak zaten ayarlı) */
   html[data-theme='light'] {
-    --bg: #f0f2f5;
+    --bg: var(--background);
     --bg-soft: #ffffff;
     --card: #ffffff;
-    --text: #1A2E4C;
-    --muted: #5a647e;
-    --accent: #b38f50;
-    --accent-2: #007a5e;
+    --text: var(--body-color);
+    --muted: #6c757d;
+    --heading-color: var(--primary);
     --shadow: 0 5px 15px -5px rgba(0,0,0,.1);
   }
 
@@ -26,21 +52,21 @@
   html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-family:'Open Sans', sans-serif;
     color:var(--text);
     background:var(--bg);
     line-height:1.6;
     transition: background .3s ease, color .3s ease;
   }
   
-  a{color:var(--accent-2); text-decoration:none; transition: color .3s ease;}
+  a{color:var(--accent); text-decoration:none; transition: color .3s ease;}
   a:hover{color:var(--accent); text-decoration:none;}
   
   .container{width:min(1100px, 92%); margin-inline:auto}
   .section{padding:100px 0;}
   .bg-soft{background:var(--bg-soft)}
   
-  h1,h2,h3{line-height:1.2; margin:0 0 16px; font-weight:700; color: var(--text);}
+  h1,h2,h3{line-height:1.2; margin:0 0 16px; font-weight:600; color: var(--heading-color); font-family: 'Montserrat', sans-serif;}
   h1{font-size:clamp(2.5rem, 5vw, 4rem);}
   h2{font-size:clamp(1.8rem, 4vw, 2.5rem); text-align:center; margin-bottom: 40px;}
 .section-title { text-align: center; margin-bottom: 40px; }
@@ -49,8 +75,8 @@
   
   .site-header{
     position:sticky; top:0; z-index:20;
-    background:rgba(10, 25, 47, .85); backdrop-filter: blur(10px); 
-    border-bottom:1px solid rgba(255,255,255,.06);
+    background: var(--bg-soft);
+    border-bottom:1px solid rgba(var(--body-color-rgb), .06);
     transition: transform .3s ease;
   }
   .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
@@ -252,8 +278,8 @@
     transition: filter .3s ease;
   }
   .btn:hover{filter:brightness(1.15)}
-  .btn-ghost{background:transparent; border:2px solid var(--accent-2); color:var(--accent-2) !important;}
-  .btn-ghost:hover{background:rgba(95, 242, 208, .1);}
+  .btn-ghost{background:transparent; border:2px solid var(--extra-accent); color:var(--extra-accent) !important;}
+.btn-ghost:hover{background:rgba(var(--extra-accent-rgb), .1);}
   .btn-sm{padding:10px 16px; font-weight:600;}
   
   .site-footer {
