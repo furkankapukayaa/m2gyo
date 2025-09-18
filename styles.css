@@ -259,7 +259,7 @@
   cite{display:block; color:var(--muted); margin-top:12px; font-weight:600;}
   
   details{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:16px; margin-bottom:12px}
-  details[open]{border-color:rgba(95, 242, 208,.3)}
+  details[open]{border-color:rgb(0, 0, 0,0.1); box-shadow:var(--shadow)}
   summary{cursor:pointer; font-weight:600}
   
   form label{display:block; font-weight:500; margin-bottom:12px}
