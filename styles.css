@@ -439,6 +439,19 @@
   color: var(--muted);
 }
 
+  .contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
   /* Mobil uyum */
   @media (max-width: 960px){
     .hero-grid, .two-col, .testimonials, .cards, .project-grid, .grid-2 {grid-template-columns:1fr}
