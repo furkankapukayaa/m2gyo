@@ -454,7 +454,7 @@
 
   /* Mobil uyum */
   @media (max-width: 960px){
-    .hero-grid, .two-col, .testimonials, .cards, .project-grid, .grid-2 {grid-template-columns:1fr}
+    .hero-grid, .two-col, .testimonials, .cards, .project-grid, .grid-2, .contact-layout {grid-template-columns:1fr}
     .nav-toggle{display:grid; place-items:center; width: 40px; height: 40px;}
     .nav-list{position:fixed; inset:65px 12px auto 12px; background:var(--bg-soft); border-radius:12px; padding:20px; display:none; flex-direction:column; gap: 10px; box-shadow: var(--shadow);}
     .nav-list.open{display:flex}
