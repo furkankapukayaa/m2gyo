@@ -69,7 +69,7 @@ if(stat){
 }
 
 // Tema (koyu/açık)
-const themeToggle = $("#themeToggle");
+const themeSwitch = $("#theme-switch-input");
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const saved = localStorage.getItem('theme');
 let isDark = saved ? saved === 'dark' : prefersDark;
@@ -77,11 +77,13 @@ let isDark = saved ? saved === 'dark' : prefersDark;
 const setTheme = (dark) => {
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   localStorage.setItem('theme', dark ? 'dark' : 'light');
-  isDark = dark;
+  if (themeSwitch) {
+    themeSwitch.checked = dark;
+  }
 };
 
-themeToggle?.addEventListener('click', () => {
-  setTheme(!isDark);
+themeSwitch?.addEventListener('change', (e) => {
+  setTheme(e.target.checked);
 });
 
 // Set initial theme
