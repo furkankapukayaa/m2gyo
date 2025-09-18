@@ -1,33 +1,28 @@
-# Metrekare GYO Web Sitesi
+# M² GYO - Kurumsal Web Sitesi 🏡
 
-Bu proje, Metrekare GYO için geliştirilmiş kurumsal bir web sitesidir. Site, şirketin hizmetlerini, projelerini, ekibini ve vizyonunu tanıtmayı amaçlamaktadır. Modern, şeffaf ve kullanıcı dostu bir arayüze sahiptir.
+Bu proje, **M² Gayrimenkul Yatırım Ortaklığı (GYO)** için geliştirilmiş modern ve kullanıcı dostu kurumsal web sitesidir. Şirketin vizyonunu, hizmetlerini ve projelerini etkili bir şekilde sergilemeyi hedefler.
 
-## Özellikler
+## ✨ Öne Çıkan Özellikler
 
-- **Duyarlı Tasarım (Responsive Design):** Tüm cihazlarda (mobil, tablet, masaüstü) sorunsuz bir kullanıcı deneyimi.
-- **Koyu/Açık Tema Desteği:** Kullanıcının tercihine veya sistem ayarlarına göre tema değiştirme.
-- **Dinamik İçerik Elemanları:** JavaScript ile kontrol edilen animasyonlu sayaçlar ve "Yukarı Çık" butonu gibi interaktif öğeler.
-- **Çok Sayfalı Yapı:** Hakkımızda, Ekibimiz, Hizmetlerimiz (alt sayfalarla birlikte), İletişim gibi birden çok sayfadan oluşur.
-- **İletişim Formu:** İstemci tarafı doğrulaması ve `mailto:` yönlendirmesi ile basit bir iletişim formu.
-- **Erişilebilirlik:** "İçeriğe geç" gibi atlama bağlantıları ile temel erişilebilirlik özellikleri.
+- **📱 Duyarlı Tasarım:** Mobil, tablet ve masaüstü cihazlarla tam uyumlu.
+- **🎨 Tema Desteği:** Kullanıcı tercihine göre Açık ve Koyu tema seçenekleri.
+- **🚀 Dinamik Elementler:** JavaScript ile zenginleştirilmiş interaktif kullanıcı deneyimi.
+- **📂 Kapsamlı İçerik:** Şirket hizmetleri, projeler, ekip ve hakkımızda gibi detaylı sayfalar.
+- **♿ Erişilebilirlik:** Temel erişilebilirlik standartlarına uygun yapı.
 
-## Kullanılan Teknolojiler
+## 🛠️ Kullanılan Teknolojiler
 
-- **HTML5:** Sayfaların yapısal iskeleti.
-- **CSS3:** Modern tasarım, esnek kutu (flexbox), ızgara (grid) ve özel değişkenler (custom properties) ile stilendirme.
-- **Vanilla JavaScript (ES6+):** Harici bir kütüphane veya framework olmadan interaktif özelliklerin ve DOM manipülasyonunun yönetimi.
+- **HTML5:** Sayfaların anlamsal ve yapısal iskeleti.
+- **CSS3:** Modern tasarım teknikleri, Flexbox ve Grid ile stilendirme.
+- **JavaScript (ES6+):** Harici kütüphane olmadan saf (vanilla) JavaScript ile interaktif fonksiyonlar.
 
-## Proje Yapısı
+## 🚀 Başlarken
 
-Proje, temel olarak statik dosyalardan oluşur:
+Bu proje statik bir web sitesidir ve herhangi bir kurulum gerektirmez.
 
-- `**.html:**` Her sayfa için ayrı bir HTML dosyası (index.html, hakkimizda.html, vb.).
-- `**styles.css:**` Sitenin tüm stillerini içeren tek bir CSS dosyası.
-- `**script.js:**` Sitenin tüm JavaScript kodlarını içeren tek bir JS dosyası.
+1. Projeyi bilgisayarınıza klonlayın veya indirin.
+2. `index.html` dosyasını favori tarayıcınızda açarak siteyi görüntüleyin.
 
-## Nasıl Çalıştırılır?
+---
 
-Bu proje statik bir web sitesi olduğu için herhangi bir derleme veya kurulum adımı gerektirmez.
-
-1. Proje dosyalarını bilgisayarınıza indirin veya klonlayın.
-2. Herhangi bir `.html` dosyasını (örneğin `index.html`) doğrudan web tarayıcınızda açın.
+Made with ❤️ by [kapukaya.dev](https://kapukaya.dev)
