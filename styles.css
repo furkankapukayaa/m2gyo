@@ -87,7 +87,7 @@
   
   .nav-list{display:flex; gap:20px; align-items:center; list-style:none; margin:0; padding:0}
   .nav-list a{padding:8px 12px; border-radius:8px; font-weight:500;}
-  .nav-list a:hover { background: var(--card); color: var(--accent); }
+  .nav-list a:not(.btn):hover { background: var(--card); color: var(--accent); }
   .nav-list a:focus{outline:none; box-shadow:var(--ring)}
   .icon-btn{background:transparent; border:0; color:var(--text); padding:8px; border-radius:8px; cursor:pointer; font-size:1.2rem;}
   
