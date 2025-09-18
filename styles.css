@@ -439,7 +439,17 @@
   color: var(--muted);
 }
 
-  .contact-layout {
+  .mini-card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.mini-card:last-child {
+  margin-bottom: 0;
+}
+
+.contact-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
