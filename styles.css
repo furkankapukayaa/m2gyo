@@ -266,6 +266,8 @@
   input, textarea{
     width:100%; padding:14px; border-radius:8px; border:1px solid var(--bg-soft);
     background:var(--bg); color:var(--text); outline:none; transition: box-shadow .3s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
   }
   input:focus, textarea:focus{box-shadow:var(--ring); border-color:var(--accent-2)}
   .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
