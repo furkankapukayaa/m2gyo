@@ -1,6 +1,6 @@
 # M² GYO - Kurumsal Web Sitesi 🏡
 
-Bu proje, **M² Gayrimenkul Yatırım Ortaklığı (GYO)** için geliştirilmiş modern ve kullanıcı dostu kurumsal web sitesidir. Şirketin vizyonunu, hizmetlerini ve projelerini etkili bir şekilde sergilemeyi hedefler.
+Bu proje, **Metrekare Gayrimenkul Yatırım Ortaklığı (GYO)** için geliştirilmiş modern ve kullanıcı dostu kurumsal web sitesidir. Şirketin vizyonunu, hizmetlerini ve projelerini etkili bir şekilde sergilemeyi hedefler.
 
 ## ✨ Öne Çıkan Özellikler
 

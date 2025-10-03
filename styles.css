@@ -4,14 +4,14 @@
     /* Yeni Renk Paleti */
     --primary: #1C3D5A;
     --primary-rgb: 28, 61, 90;
-    --accent: #F4A261;
-    --accent-rgb: 244, 162, 97;
+    --accent: #015752;
+    --accent-rgb: 1, 87, 82;
     --background: #F8F9FA;
     --heading-color: #1C3D5A;
     --body-color: #333333;
-    --body-color-rgb: 51, 51, 51;
-    --extra-accent: #2A9D8F;
-    --extra-accent-rgb: 42, 157, 143;
+    --body-color-rgb: 1, 87, 82;
+    --extra-accent: #06a39b;
+    --extra-accent-rgb: 51, 51, 51;
 
     /* Mevcut değişkenleri yeni palete göre güncelle */
     --bg: var(--background); /* Light mode default */
