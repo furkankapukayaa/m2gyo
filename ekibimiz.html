@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header class="site-header">
@@ -37,7 +38,6 @@
               <li><a href="arsa-arazi.html">Arsa/Arazi</a></li>
               <li><a href="ticari.html">Ticari</a></li>
               <li><a href="mevzuat.html">Gayrimenkul Mevzuatı</a></li>
-              <li><a href="mimarlik.html">Mimarlık</a></li>
               <li><a href="insaat.html">İnşaat</a></li>
               <li><a href="yatirim.html">Yatırım Danışmanlığı</a></li>
             </ul>
@@ -60,24 +60,78 @@
         <div style="max-width: 800px; margin: 0 auto 40px; text-align: center;">
             <p>M² Gayrimenkul ekibi, gayrimenkul sektöründe uzun yıllara sahip deneyimli ve uzmanlardan oluşmaktadır. Ekibimiz, her zaman müşterilerimizin ihtiyaç ve hedeflerini en iyi şekilde anlamak ve onlara en uygun çözümleri sunmak için çalışmaktadır.</p>
         </div>
-        <div class="team-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-          <!-- Team Member Card -->
-          <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
-            <img src="assets/man.png" alt="Ekip Üyesi" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-            <h3 style="color: var(--text); font-size: 1.2rem;">Ahmet Yılmaz</h3>
-            <p style="color: var(--accent); margin:0;">Kurucu & CEO</p>
+        <div class="team-layout">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="display: inline-block; text-align: center; color: var(--accent); margin-top: 40px; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">Kurucu Ortaklar</h3>
           </div>
-          <!-- Team Member Card -->
-          <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
-            <img src="assets/woman.png" alt="Ekip Üyesi" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-            <h3 style="color: var(--text); font-size: 1.2rem;">Ayşe Kaya</h3>
-            <p style="color: var(--accent); margin:0;">Satış Direktörü</p>
+          <div class="team-group founders-group" style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px;">
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow); width: 250px;">
+              <img src="assets/man.png" alt="İlker KÖKSAL" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">İlker KÖKSAL</h3>
+              <p style="color: var(--accent); margin:0;">Kurucu Ortak</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow); width: 250px;">
+              <img src="assets/man1.png" alt="Muhammed Talha SARISOY" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Muhammed Talha SARISOY</h3>
+              <p style="color: var(--accent); margin:0;">Kurucu Ortak</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow); width: 250px;">
+              <img src="assets/man.png" alt="Mustafa Emre KÖKSAL" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Mustafa Emre KÖKSAL</h3>
+              <p style="color: var(--accent); margin:0;">Kurucu Ortak</p>
+            </div>
           </div>
-          <!-- Team Member Card -->
-          <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
-            <img src="assets/man1.png" alt="Ekip Üyesi" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-            <h3 style="color: var(--text); font-size: 1.2rem;">Mehmet Öztürk</h3>
-            <p style="color: var(--accent); margin:0;">Proje Yöneticisi</p>
+
+          <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="display: inline-block; text-align: center; color: var(--accent); margin-top: 40px; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">Broker</h3>
+          </div>
+          <div class="team-group broker-group" style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px;">
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow); width: 250px;">
+              <img src="assets/man1.png" alt="Mehmet Fatih Üngül" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Mehmet Fatih Üngül</h3>
+              <p style="color: var(--accent); margin:0;">Broker</p>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="display: inline-block; text-align: center; color: var(--accent); margin-top: 40px; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">Gayrimenkul Danışmanları</h3>
+          </div>
+          <div class="team-group advisors-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/man.png" alt="Ubey Erbay" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Ubey Erbay</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/woman.png" alt="Rojda Yılmaz" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Rojda Yılmaz</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/man1.png" alt="Ömer İsmik" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Ömer İsmik</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/woman.png" alt="Hüsniye Avşar Aydos" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Hüsniye Avşar Aydos</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/man.png" alt="Emrah Hardal" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Emrah Hardal</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/woman.png" alt="Burcu Özgencil Arat" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Burcu Özgencil Arat</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
+            <div class="team-member" style="background: var(--card); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+              <img src="assets/woman.png" alt="Saadet Tutku Ede" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+              <h3 style="color: var(--text); font-size: 1.2rem;">Saadet Tutku Ede</h3>
+              <p style="color: var(--accent); margin:0;">Gayrimenkul Danışmanı</p>
+            </div>
           </div>
         </div>
         <div style="max-width: 800px; margin: 40px auto 0; text-align: left;">
@@ -95,8 +149,10 @@
     </section>
   </main>
   <footer class="site-footer"><div class="container"><div class="footer-content"><a href="index.html" class="brand"><span>M² <strong>GYO</strong></span></a><nav class="footer-nav" aria-label="Alt menü"><a href="hakkimizda.html">Hakkımızda</a><a href="hizmetlerimiz.html">Hizmetler</a><a href="ekibimiz.html">Ekibimiz</a><a href="iletisim.html">İletişim</a></nav><hr class="footer-divider"><div class="social-media"><a href="https://www.linkedin.com/company/metrekare-gayrimenkul" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/metrekaregyo" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a><a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg></a><a href="https://www.facebook.com/people/Metrekare-Gayrimenkul/61559916633944/" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a></div><div class="footer-legal"><a href="gizlilik-politikasi.html">Gizlilik Politikası</a><span>|</span><a href="cerez-politikasi.html">Çerez Politikası</a></div><p class="copyright">© <span id="year"></span> M² Gayrimenkul • Tüm hakları saklıdır.</p><p class="copyright">Made with ❤️ by <a href="https://kapukaya.dev/" target="_blank" rel="noopener noreferrer">kapukaya.dev</a></p></div></div></footer>
+<a href="https://wa.me/905335741909" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile İletişime Geçin">
+    <i class="fab fa-whatsapp"></i>
+  </a>
   <button class="to-top" aria-label="Yukarı çık">↑</button>
-
   <script src="script.js"></script>
 </body>
 </html>
