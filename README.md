@@ -1,13 +1,19 @@
-# M² GYO - Kurumsal Web Sitesi 🏡
+# Metrekare Gayrimenkul (M² GYO) - Kurumsal Web Sitesi 🏡
 
-Bu proje, **Metrekare Gayrimenkul Yatırım Ortaklığı (GYO)** için geliştirilmiş modern ve kullanıcı dostu kurumsal web sitesidir. Şirketin vizyonunu, hizmetlerini ve projelerini etkili bir şekilde sergilemeyi hedefler.
+Bu proje, **Metrekare Gayrimenkul Yatırım Ortaklığı (M² GYO)** için geliştirilmiş modern ve kullanıcı dostu bir kurumsal web sitesidir. Şirketin vizyonunu, hizmetlerini, projelerini ve ekibini etkili bir şekilde sergilemeyi hedefler.
 
 ## ✨ Öne Çıkan Özellikler
 
 - **📱 Duyarlı Tasarım:** Mobil, tablet ve masaüstü cihazlarla tam uyumlu.
-- **🎨 Tema Desteği:** Kullanıcı tercihine göre Açık ve Koyu tema seçenekleri.
+- **🎨 Modern Arayüz:** Kullanıcı dostu ve estetik bir tasarım.
 - **🚀 Dinamik Elementler:** JavaScript ile zenginleştirilmiş interaktif kullanıcı deneyimi.
-- **📂 Kapsamlı İçerik:** Şirket hizmetleri, projeler, ekip ve hakkımızda gibi detaylı sayfalar.
+- **📂 Kapsamlı İçerik:**
+  - Hakkımızda
+  - Hizmetlerimiz (İnşaat, Yatırım vb.)
+  - İlanlarımız (Konut, Ticari, Arsa-Arazi)
+  - Ekibimiz
+  - İletişim
+  - Yasal Bilgilendirmeler (Gizlilik Politikası, Çerez Politikası)
 - **♿ Erişilebilirlik:** Temel erişilebilirlik standartlarına uygun yapı.
 
 ## 🛠️ Kullanılan Teknolojiler
@@ -16,13 +22,24 @@ Bu proje, **Metrekare Gayrimenkul Yatırım Ortaklığı (GYO)** için geliştir
 - **CSS3:** Modern tasarım teknikleri, Flexbox ve Grid ile stilendirme.
 - **JavaScript (ES6+):** Harici kütüphane olmadan saf (vanilla) JavaScript ile interaktif fonksiyonlar.
 
-## 🚀 Başlarken
+## 📂 Proje Yapısı
 
-Bu proje statik bir web sitesidir ve herhangi bir kurulum gerektirmez.
-
-1. Projeyi bilgisayarınıza klonlayın veya indirin.
-2. `index.html` dosyasını favori tarayıcınızda açarak siteyi görüntüleyin.
-
----
+```
+.
+├── index.html                # Ana sayfa
+├── hakkimizda.html           # Hakkımızda sayfası
+├── hizmetlerimiz.html        # Hizmetler sayfası
+├── ilanlarimiz.html          # İlanlar sayfası
+├── ekibimiz.html             # Ekip sayfası
+├── iletisim.html             # İletişim sayfası
+├── styles.css                # Ana stil dosyası
+├── script.js                 # Ana JavaScript dosyası
+└── assets/                   # Logo, resimler ve diğer varlıklar
+    ├── avatars/
+    ├── back/
+    ├── logo/
+    ├── other/
+    └── projects/
+```
 
 Made with ❤️ by [kapukaya.dev](https://kapukaya.dev)
