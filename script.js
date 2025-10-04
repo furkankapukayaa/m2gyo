@@ -1,8 +1,6 @@
-// Küçük yardımcılar
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-// Mobil menü
 const navToggle = $(".nav-toggle");
 const navList = $(".nav-list");
 navToggle?.addEventListener('click', () => {
@@ -10,14 +8,12 @@ navToggle?.addEventListener('click', () => {
 	navToggle.setAttribute('aria-expanded', String(open));
 });
 
-// Yıl
 const yearEl = $("#year");
 if (yearEl) {
 	yearEl.textContent = new Date().getFullYear();
 }
 
 
-// Yukarı çık butonu
 const toTop = $(".to-top");
 if (toTop) {
 	window.addEventListener('scroll', () => {
@@ -30,7 +26,6 @@ if (toTop) {
 }
 
 
-// Form doğrulama (demo)
 const form = $("#contactForm");
 const formStatus = $("#formStatus");
 form?.addEventListener('submit', (e) => {
@@ -42,15 +37,14 @@ form?.addEventListener('submit', (e) => {
 		formStatus.style.color = 'var(--accent)';
 		return;
 	}
-	// Backend yok: mailto ile hızlı yönlendirme + kullanıcıya bildirim
-	const mailto = `mailto:info@metrekaregyo.com?subject=${encodeURIComponent('[Web] ' + data.subject)}&body=${encodeURIComponent(`Ad Soyad: ${data.name}\nE-posta: ${data.email}\n\nMesaj:\n${data.message}`)}`;
+
+  const mailto = `mailto:info@metrekaregyo.com?subject=${encodeURIComponent('[Web] ' + data.subject)}&body=${encodeURIComponent(`Ad Soyad: ${data.name}\nE-posta: ${data.email}\n\nMesaj:\n${data.message}`)}`;
 	window.location.href = mailto;
 	form.reset();
 	formStatus.textContent = 'Teşekkürler! E-posta uygulamanız açıldı.';
 	formStatus.style.color = 'var(--accent-2)';
 });
 
-// Sayaç animasyonu
 const stat = $(".stat-big");
 if (stat) {
 	const target = Number(stat.getAttribute('data-count')) || 100;
@@ -73,7 +67,6 @@ if (stat) {
 	io.observe(stat);
 }
 
-// Tema (koyu/açık)
 const themeSwitch = $("#theme-switch-input");
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const saved = localStorage.getItem('theme');
@@ -91,16 +84,13 @@ themeSwitch?.addEventListener('change', (e) => {
 	setTheme(e.target.checked);
 });
 
-// Set initial theme
 setTheme(isDark);
 
-
-// Gözlemci (Observer) for fade-in animations
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting) {
 			entry.target.classList.add('is-visible');
-			observer.unobserve(entry.target); // Animasyon bir kere çalışsın
+			observer.unobserve(entry.target);
 		}
 	});
 }, {
@@ -175,7 +165,7 @@ class Slider {
 			if (loop) {
 				nextIndex = 0;
 			} else {
-				return; // Don't move if not looping and at the end
+				return;
 			}
 		}
 		this.moveToSlide(nextIndex);
@@ -200,9 +190,9 @@ class Slider {
 	}
 
 	startAutoScroll() {
-		this.stopAutoScroll(); // Ensure no multiple intervals are running
+		this.stopAutoScroll();
 		this.autoScrollInterval = setInterval(() => {
-			this.moveToNextSlide(true); // loop = true
+			this.moveToNextSlide(true);
 		}, this.options.interval);
 	}
 
