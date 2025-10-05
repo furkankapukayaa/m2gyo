@@ -92,7 +92,8 @@ h3 {
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
-h2 {
+h2,
+.page-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   text-align: center;
   margin-bottom: 40px;
@@ -249,10 +250,6 @@ p {
   font-weight: 700;
   color: var(--accent);
   display: block;
-}
-
-.about-text .text-left {
-  text-align: left;
 }
 
 .about-text .text-left {
@@ -1025,4 +1022,11 @@ input:checked + .slider:before {
 .service-box:hover .service-arrow {
     transform: translateX(5px);
     color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .two-col-about,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
 }
