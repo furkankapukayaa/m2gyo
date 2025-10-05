@@ -338,24 +338,23 @@ p {
 
 .slider-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-  flex: 0 0 100%;
+  flex-shrink: 0;
+  width: 100%;
   padding: 0 10px;
-  min-width: 0;
 }
 
 @media (min-width: 768px) {
   .slide {
-    flex-basis: 50%;
+    width: 50%;
   }
 }
 
 @media (min-width: 992px) {
   .slide {
-    flex-basis: 33.333%;
+    width: 25%;
   }
 }
 
@@ -976,4 +975,54 @@ input:checked + .slider:before {
 
 .hero .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* Service Boxes */
+.service-boxes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.service-box {
+    display: flex;
+    align-items: center;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-right: 20px;
+}
+
+.service-title {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text);
+    font-family: "Open Sans", sans-serif;
+}
+
+.service-arrow {
+    font-size: 1.2rem;
+    color: var(--muted);
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover .service-arrow {
+    transform: translateX(5px);
+    color: var(--accent);
 }

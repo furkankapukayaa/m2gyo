@@ -103,111 +103,141 @@ sectionsToFade.forEach(section => {
 });
 
 class Slider {
-	constructor(selector, options = {}) {
-		this.slider = document.querySelector(selector);
-		if (!this.slider) return;
+    constructor(selector, options = {}) {
+        this.slider = document.querySelector(selector);
+        if (!this.slider) return;
 
-		this.track = this.slider.querySelector('.slider-track');
-		this.slides = Array.from(this.track.children);
-		this.nextButton = this.slider.querySelector('.next');
-		this.prevButton = this.slider.querySelector('.prev');
+        this.track = this.slider.querySelector('.slider-track');
+        this.nextButton = this.slider.querySelector('#projeler-nav .next');
+        this.prevButton = this.slider.querySelector('#projeler-nav .prev');
 
-		if (this.slides.length === 0) return;
+        this.originalSlides = Array.from(this.track.children).map(slide => slide.cloneNode(true));
+        if (this.originalSlides.length === 0) return;
 
-		this.options = {
-			autoScroll: false,
-			interval: 5000,
-			...options
-		};
+        this.options = {
+            autoScroll: false,
+            interval: 5000,
+            loop: false,
+            ...options
+        };
 
-		this.slideWidth = this.slides[0].getBoundingClientRect().width;
-		this.currentIndex = 0;
-		this.autoScrollInterval = null;
+        this.isMoving = false;
+        this.autoScrollInterval = null;
+        this.slideWidth = 0;
+        this.currentIndex = 0;
 
-		this.init();
-	}
+        this.init();
+    }
 
-	init() {
-		this.setSlidePositions();
-		this.updateButtons();
+    init() {
+        this.rebuild();
+        this.initEvents();
+    }
 
-		this.nextButton.addEventListener('click', () => this.moveToNextSlide());
-		this.prevButton.addEventListener('click', () => this.moveToPrevSlide());
+    rebuild() {
+        this.stopAutoScroll();
+        this.track.innerHTML = '';
 
-		window.addEventListener('resize', () => {
-			this.slideWidth = this.slides[0].getBoundingClientRect().width;
-			this.setSlidePositions();
-			this.track.style.transform = `translateX(-${this.slideWidth * this.currentIndex}px)`;
-		});
+        if (this.options.loop) {
+            const copies = 3;
+            for (let i = 0; i < copies; i++) {
+                this.originalSlides.forEach(slide => this.track.appendChild(slide.cloneNode(true)));
+            }
+            this.currentIndex = this.originalSlides.length;
+        } else {
+            this.originalSlides.forEach(slide => this.track.appendChild(slide.cloneNode(true)));
+            this.currentIndex = 0;
+        }
 
-		if (this.options.autoScroll) {
-			this.startAutoScroll();
-			this.slider.addEventListener('mouseenter', () => this.stopAutoScroll());
-			this.slider.addEventListener('mouseleave', () => this.startAutoScroll());
-		}
-	}
+        this.slides = Array.from(this.track.children);
+        if (this.slides.length === 0) return;
+        
+        this.slideWidth = this.slides[0].getBoundingClientRect().width;
+        if (this.slideWidth === 0) {
+            // console.error("Slider slide width is 0. Check visibility and image loading.");
+            return;
+        }
 
-	setSlidePositions() {
-		this.slides.forEach((slide, index) => {
-			slide.style.left = this.slideWidth * index + 'px';
-		});
-	}
+        this.updatePosition(false);
+        this.startAutoScroll();
+    }
 
-	moveToSlide(targetIndex) {
-		this.track.style.transform = `translateX(-${this.slideWidth * targetIndex}px)`;
-		this.currentIndex = targetIndex;
-		this.updateButtons();
-	}
+    initEvents() {
+        this.nextButton?.addEventListener('click', () => this.moveNext());
+        this.prevButton?.addEventListener('click', () => this.movePrev());
+        this.track.addEventListener('transitionend', () => this.onTransitionEnd());
 
-	moveToNextSlide(loop = false) {
-		let nextIndex = this.currentIndex + 1;
-		if (nextIndex >= this.slides.length - this.getVisibleSlides() + 1) {
-			if (loop) {
-				nextIndex = 0;
-			} else {
-				return;
-			}
-		}
-		this.moveToSlide(nextIndex);
-	}
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => this.rebuild(), 250);
+        });
 
-	moveToPrevSlide() {
-		if (this.currentIndex > 0) {
-			this.moveToSlide(this.currentIndex - 1);
-		}
-	}
+        if (this.options.autoScroll) {
+            this.slider.addEventListener('mouseenter', () => this.stopAutoScroll());
+            this.slider.addEventListener('mouseleave', () => this.startAutoScroll());
+        }
+    }
 
-	updateButtons() {
-		if (!this.options.autoScroll || !this.prevButton || !this.nextButton) return;
-		this.prevButton.disabled = this.currentIndex === 0;
-		this.nextButton.disabled = this.currentIndex >= this.slides.length - this.getVisibleSlides();
-	}
+    updatePosition(withTransition = true) {
+        if (this.slideWidth === 0) return;
+        this.track.style.transition = withTransition ? 'transform 500ms ease-in-out' : 'none';
+        this.track.style.transform = `translateX(-${this.currentIndex * this.slideWidth}px)`;
+    }
 
-	getVisibleSlides() {
-		const containerWidth = this.slider.querySelector('.slider-container').offsetWidth;
-		if (this.slideWidth === 0) return 0;
-		return Math.round(containerWidth / this.slideWidth);
-	}
+    moveNext() {
+        if (this.isMoving) return;
+        this.isMoving = true;
+        this.currentIndex++;
+        this.updatePosition();
+        this.resetAutoScroll();
+    }
 
-	startAutoScroll() {
-		this.stopAutoScroll();
-		this.autoScrollInterval = setInterval(() => {
-			this.moveToNextSlide(true);
-		}, this.options.interval);
-	}
+    movePrev() {
+        if (this.isMoving) return;
+        this.isMoving = true;
+        this.currentIndex--;
+        this.updatePosition();
+        this.resetAutoScroll();
+    }
 
-	stopAutoScroll() {
-		clearInterval(this.autoScrollInterval);
-	}
+    onTransitionEnd() {
+        this.isMoving = false;
+        if (this.options.loop) {
+            const numOriginal = this.originalSlides.length;
+            if (this.currentIndex >= numOriginal * 2) {
+                this.currentIndex -= numOriginal;
+                this.updatePosition(false);
+            }
+            if (this.currentIndex < numOriginal) {
+                this.currentIndex += numOriginal;
+                this.updatePosition(false);
+            }
+        }
+    }
+
+    startAutoScroll() {
+        if (!this.options.autoScroll || this.autoScrollInterval) return;
+        this.autoScrollInterval = setInterval(() => this.moveNext(), this.options.interval);
+    }
+
+    stopAutoScroll() {
+        clearInterval(this.autoScrollInterval);
+        this.autoScrollInterval = null;
+    }
+
+    resetAutoScroll() {
+        if (this.options.autoScroll) {
+            this.stopAutoScroll();
+            this.startAutoScroll();
+        }
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	new Slider('#hizmetler-slider', {
-		autoScroll: true,
-		interval: 4000
-	});
-	new Slider('#projeler-slider', {
-		autoScroll: true,
-		interval: 5000
-	});
+window.addEventListener('load', () => {
+    new Slider('#projeler-slider', {
+        autoScroll: true,
+        interval: 5000,
+        loop: true
+    });
 });
